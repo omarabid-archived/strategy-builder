@@ -1,0 +1,4 @@
+external_resources
+node_modules
+package-lock.json
+build
