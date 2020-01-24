@@ -28,6 +28,8 @@
         "gulp-postcss": "^8.0.0",
         "gulp-rev": "9.0.0",
         "gulp-rev-rewrite": "2.0.0",
+        "gulp-sass": "^4.0.2",
+        "node-sass": "^4.13.0",
         "hostile": "^1.3.2",
         "postcss-load-config": "^2.1.0",
         "postcss-uncss": "^0.16.1",

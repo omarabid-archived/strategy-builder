@@ -19,6 +19,8 @@ const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
 const hostile = require('hostile');
+const sass = require('gulp-sass');
+sass.compiler = require('node-sass');
 
 const app = require('assemble')();
 
@@ -44,10 +46,10 @@ function css(cb) {
 
     return src(
         [
-            'node_modules/bulma/css/bulma.min.css',
-            'src/css/style.css'
+           'src/sass/style.scss'
         ]
     )
+        .pipe(sass().on('error', sass.logError))
         .pipe(concat('style.min.css'))
         .pipe(clean_css())
         .pipe(rev())
@@ -92,7 +94,7 @@ function wc() {
 
     watch('src/html/**/*.*', html);
     watch('build/rev-manifest.json', html);
-    watch('src/css/**/*.*', css, html);
+    watch('src/sass/**/*.*', css, html);
     watch('src/javascript/**/*.*', js, html);
     watch(['src/images/**/*.*', 'src/fonts/**/*.*'], files);
 }
