@@ -3,24 +3,24 @@
 // TODO: enable dev/prod modes
 // TODO: use SaaS + pre-processor
 // TODO: import bulma through modules
+// TODO: documentation
 const { watch, series, parallel, src, dest } = require('gulp');
-var clean_css = require('gulp-clean-css');
-var post_css = require('gulp-postcss');
-var concat = require('gulp-concat');
-var minify_js = require('gulp-minify');
-var rev = require('gulp-rev');
-var rev_rewrite = require('gulp-rev-rewrite');
-var del = require('del');
-var htmlmin = require('gulp-htmlmin');
-var browser_sync = require('browser-sync').create();
-var argv = require('yargs').argv;
-var webpack = require('webpack');
-var webpackStream = require('webpack-stream');
-var webpackConfig = require('./webpack.config.js');
-var hostile = require('hostile');
+const clean_css = require('gulp-clean-css');
+const post_css = require('gulp-postcss');
+const concat = require('gulp-concat');
+const minify_js = require('gulp-minify');
+const rev = require('gulp-rev');
+const rev_rewrite = require('gulp-rev-rewrite');
+const del = require('del');
+const htmlmin = require('gulp-htmlmin');
+const browser_sync = require('browser-sync').create();
+const argv = require('yargs').argv;
+const webpack = require('webpack');
+const webpackStream = require('webpack-stream');
+const webpackConfig = require('./webpack.config.js');
+const hostile = require('hostile');
 
-var assemble = require('assemble');
-var app = assemble();
+const app = require('assemble')();
 
 function html(cb) {
     var manifest = src('build/rev-manifest.json',{allowEmpty: true});
