@@ -114,7 +114,6 @@ function browser_reload(cb) {
 
     browser_sync.init({
         server: "build",
-        open: 'external',
         host: 'frontroot.com',
         port: 80
     });
