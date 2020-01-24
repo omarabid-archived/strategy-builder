@@ -17,6 +17,7 @@ var argv = require('yargs').argv;
 var webpack = require('webpack');
 var webpackStream = require('webpack-stream');
 var webpackConfig = require('./webpack.config.js');
+var hostile = require('hostile');
 
 var assemble = require('assemble');
 var app = assemble();
@@ -96,13 +97,25 @@ function wc() {
     watch(['src/images/**/*.*', 'src/fonts/**/*.*'], files);
 }
 
+function set_hostname(cb) {
+    hostile.set('127.0.0.1', 'frontroot.com', function (err) {
+        if (err) {
+            console.error(err)
+        } else {
+            console.log('set /etc/hosts successfully!')
+        }
+    });
+
+    cb();
+}
+
 function browser_reload(cb) {
     console.info("== Launching Browser Reload ==");
 
     browser_sync.init({
         server: "build",
         open: 'external',
-        host: 'derivealpha.com',
+        host: 'frontroot.com',
         port: 80
     });
 
@@ -116,6 +129,7 @@ function clean(cb) {
 }
 
 const defaultTask = series(
+    set_hostname,
     browser_reload,
     wc
 );
