@@ -46,7 +46,7 @@ function css(cb) {
 
     return src(
         [
-           'src/sass/style.scss'
+            'src/sass/style.scss'
         ]
     )
         .pipe(sass().on('error', sass.logError))
@@ -68,8 +68,8 @@ function js(cb) {
         'src/javascript/core.js'
     ])
         .pipe(webpackStream(webpackConfig), webpack)
-    //.pipe(minify_js({noSource: true}))
-    //.pipe(concat('javascript.min.js'))
+        .pipe(minify_js({noSource: true}))
+        .pipe(concat('javascript.min.js'))
         .pipe(rev())
         .pipe(dest('build'))
         .pipe(rev.manifest('build/rev-manifest.json', {
