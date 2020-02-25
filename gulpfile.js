@@ -1,11 +1,7 @@
-// TODO: cleanup dep and dev-dep in package.json
-// TODO: make browsersync snippet only appear on dev, remove on deploy
 // TODO: enable dev/prod modes
-// TODO: import bulma through modules
 // TODO: documentation
 const { watch, series, parallel, src, dest } = require('gulp');
 const clean_css = require('gulp-clean-css');
-const post_css = require('gulp-postcss');
 const concat = require('gulp-concat');
 const minify_js = require('gulp-minify');
 const rev = require('gulp-rev');

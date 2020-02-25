@@ -1,48 +1,32 @@
 {
-    "name": "derive-alpha",
+    "name": "front-root",
     "version": "1.0.0",
-    "description": "Options Designer",
+    "description": "Simplify Front-End development",
     "main": "gulpfile.js",
     "dependencies": {
         "assemble": "^0.24.3",
-        "browser-sync": "^2.26.7",
-        "bulma": "^0.8.0",
         "del": "^5.1.0",
         "lodash": "^4.17.15",
         "ts-loader": "^6.2.1",
         "typescript": "^3.8.2",
-        "uncss": "^0.16.2",
-        "vue": "^2.6.10",
-        "vue-loader": "^15.7.2",
-        "vue-router": "^3.1.3",
-        "yargs": "^13.2.4"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.7.4",
-        "babel": "^6.23.0",
-        "babel-loader": "^8.0.6",
+        "yargs": "^13.2.4",
         "css-loader": "^3.2.1",
         "gulp": "^4.0.2",
         "gulp-clean-css": "^4.2.0",
         "gulp-concat": "^2.6.1",
         "gulp-htmlmin": "5.0.1",
         "gulp-minify": "^3.1.0",
-        "gulp-postcss": "^8.0.0",
         "gulp-rev": "9.0.0",
         "gulp-rev-rewrite": "2.0.0",
         "gulp-sass": "^4.0.2",
         "node-sass": "^4.13.0",
-        "hostile": "^1.3.2",
-        "postcss-load-config": "^2.1.0",
-        "postcss-uncss": "^0.16.1",
-        "vue-style-loader": "^4.1.2",
-        "vue-template-compiler": "^2.6.10",
         "webpack": "^4.41.2",
         "webpack-stream": "^5.2.1"
     },
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+    "devDependencies": {
+        "browser-sync": "^2.26.7",
+        "hostile": "^1.3.2"
     },
     "author": "Abid Omar",
-    "license": "Proprietary"
+    "license": "MIT"
 }
