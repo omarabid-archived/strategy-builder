@@ -1,7 +1,6 @@
 // TODO: cleanup dep and dev-dep in package.json
 // TODO: make browsersync snippet only appear on dev, remove on deploy
 // TODO: enable dev/prod modes
-// TODO: use SaaS + pre-processor
 // TODO: import bulma through modules
 // TODO: documentation
 const { watch, series, parallel, src, dest } = require('gulp');
