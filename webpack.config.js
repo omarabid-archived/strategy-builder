@@ -3,7 +3,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
     mode: 'development',
-    entry: './src/javascript/core.js',
+    entry: './src/javascript/index.ts',
     output: {
         filename: 'javascript.min.js'
     },
@@ -14,8 +14,8 @@ module.exports = {
                 loader: 'vue-loader'
             },
             {
-                test: /\.js$/,
-                loader: 'babel-loader'
+                test: /\.tsx?$/,
+                loader: 'ts-loader',
             },
             {
                 test: /\.css$/,
@@ -25,6 +25,9 @@ module.exports = {
                 ]
             }
         ]
+    },
+    resolve : {
+        extensions : [ '.ts', '.tsx', '.js', '.jsx' ]
     },
     plugins: [
         new VueLoaderPlugin()
