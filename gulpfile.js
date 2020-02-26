@@ -60,7 +60,7 @@ function js(cb) {
     del.sync(['build/*.js'], {force: true});
 
     return src([
-        'src/javascript/index.ts'
+        'src/javascript/index.tsx'
     ])
         .pipe(webpackStream(webpackConfig), webpack)
         .pipe(minify_js({noSource: true}))
