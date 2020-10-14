@@ -1,4 +1,11 @@
 {
+    "include": [
+        "src/javascript/**/*"
+    ],
+    "exclude": [
+        "build/**/*",
+        "node_modules/**/*"
+    ],
     "compilerOptions": {
         "target": "es6",
         "jsx": "react",
