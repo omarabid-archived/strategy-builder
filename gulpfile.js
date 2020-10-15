@@ -9,7 +9,6 @@ const rev_rewrite = require('gulp-rev-rewrite');
 const del = require('del');
 const htmlmin = require('gulp-htmlmin');
 const browser_sync = require('browser-sync').create();
-const argv = require('yargs').argv;
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const webpackConfig = require('./webpack.config.js');
@@ -63,8 +62,8 @@ function js(cb) {
         'src/javascript/index.tsx'
     ])
         .pipe(webpackStream(webpackConfig), webpack)
-        .pipe(minify_js({noSource: true}))
-        .pipe(concat('javascript.min.js'))
+        //.pipe(minify_js({noSource: true}))
+        //.pipe(concat('javascript.min.js'))
         .pipe(rev())
         .pipe(dest('build'))
         .pipe(rev.manifest('build/rev-manifest.json', {
