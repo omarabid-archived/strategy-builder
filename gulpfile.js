@@ -1,4 +1,3 @@
-// TODO: enable dev/prod modes
 // TODO: documentation
 const { watch, series, parallel, src, dest } = require('gulp');
 const clean_css = require('gulp-clean-css');
@@ -11,12 +10,26 @@ const htmlmin = require('gulp-htmlmin');
 const browser_sync = require('browser-sync').create();
 const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
-const webpackConfig = require('./webpack.config.js');
 const hostile = require('hostile');
 const sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 
 const app = require('assemble')();
+
+// gulp mode
+var mode = require('gulp-mode')({
+    modes: ["production", "development"],
+    default: "development",
+    verbose: false
+});
+// Production variable
+var isProduction = mode.production();
+
+// Set webpackconfig file depdending on mode
+var webpackConfig = require('./webpack.devel.config.js');
+if (isProduction) {
+    var webpackConfig = require('./webpack.prod.config.js');
+}
 
 function html(cb) {
     var manifest = src('build/rev-manifest.json',{allowEmpty: true});
