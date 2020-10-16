@@ -3,7 +3,7 @@
 const { watch, series, parallel, src, dest } = require('gulp');
 const clean_css = require('gulp-clean-css');
 const concat = require('gulp-concat');
-const minify_js = require('gulp-minify');
+const rename = require('gulp-rename');
 const rev = require('gulp-rev');
 const rev_rewrite = require('gulp-rev-rewrite');
 const del = require('del');
@@ -62,9 +62,14 @@ function js(cb) {
         'src/javascript/index.tsx'
     ])
         .pipe(webpackStream(webpackConfig), webpack)
-        //.pipe(minify_js({noSource: true}))
-        //.pipe(concat('javascript.min.js'))
         .pipe(rev())
+    // The sourcemaps file should not be versioned.
+    // We rename it here to remove the rev.
+        .pipe(rename(function(path) {
+            if (path.extname == '.map') {
+                path.basename = 'javascript.min.js';
+            }
+        }))
         .pipe(dest('build'))
         .pipe(rev.manifest('build/rev-manifest.json', {
             base: 'build',
