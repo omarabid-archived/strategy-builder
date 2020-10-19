@@ -74,9 +74,8 @@ function js(cb) {
     del.sync(['build/*.js'], {force: true});
 
     return src([
-        'src/javascript/index.tsx'
+        'dist/javascript.min.js', 'dist/javascript.min.js.map'
     ])
-        .pipe(webpackStream(webpackConfig, webpack))
         .pipe(rev())
     // The sourcemaps file should not be versioned.
     // We rename it here to remove the rev.
@@ -105,13 +104,29 @@ function files(cb) {
     cb();
 }
 
+/*
+ * Webpack Task.
+ *
+ * Run the webpack process indepedently and in parallel to gulp watch.
+ * This ensures that we have the best performance.
+ */
+function webpack_watch(cb) {
+    return src([
+        'src/javascript/index.tsx'
+    ])
+    .pipe(webpackStream(webpackConfig, webpack))
+    .pipe(dest('dist'));
+
+    cb();
+}
+
 function wc() {
     console.info("== Watching Files ==");
 
     watch('src/html/**/*.*', html);
     watch('build/rev-manifest.json', html);
     watch('src/sass/**/*.*', css, html);
-    watch('src/javascript/**/*.*', js, html);
+    watch('dist/**/*.*', js, html);
     watch(['src/images/**/*.*', 'src/fonts/**/*.*'], files);
 }
 
@@ -168,6 +183,7 @@ module.exports = {
     css,
     js,
     files,
+    webpack_watch,
     clean,
     wc,
     browser_reload,
