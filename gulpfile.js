@@ -169,6 +169,7 @@ const defaultTask = series(
 const regenerate = series(
     clean,
     css,
+    webpack_watch,
     js,
     files,
     html
