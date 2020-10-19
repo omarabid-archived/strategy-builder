@@ -160,10 +160,11 @@ function clean(cb) {
     return del(['build/*'], {force: true});
 }
 
-const defaultTask = series(
+const defaultTask = parallel(webpack_watch, series(
     set_hostname,
     browser_reload,
     wc
+    )
 );
 
 const regenerate = series(
