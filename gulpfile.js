@@ -66,6 +66,8 @@ function css(cb) {
             merge:true
         }))
         .pipe(dest('build'));
+
+        cb();
 }
 
 function js(cb) {
@@ -74,7 +76,7 @@ function js(cb) {
     return src([
         'src/javascript/index.tsx'
     ])
-        .pipe(webpackStream(webpackConfig), webpack)
+        .pipe(webpackStream(webpackConfig, webpack))
         .pipe(rev())
     // The sourcemaps file should not be versioned.
     // We rename it here to remove the rev.
@@ -89,6 +91,8 @@ function js(cb) {
             merge:true
         }))
         .pipe(dest('build'));
+
+        cb();
 }
 
 function files(cb) {
