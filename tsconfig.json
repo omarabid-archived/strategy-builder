@@ -10,6 +10,12 @@
         "target": "es6",
         "jsx": "react",
         "sourceMap": true,
-        "moduleResolution": "node"
+        "moduleResolution": "node",
+        "incremental": true,
+"esModuleInterop": true,
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "strict": true,
+        "importsNotUsedAsValues": "preserve"
     }
 }
