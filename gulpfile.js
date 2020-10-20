@@ -12,6 +12,7 @@ const webpack = require('webpack');
 const webpackStream = require('webpack-stream');
 const hostile = require('hostile');
 const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
 sass.compiler = require('node-sass');
 
 const app = require('assemble')();
@@ -56,16 +57,18 @@ function css(cb) {
             'src/sass/style.scss'
         ]
     )
-        .pipe(sass().on('error', sass.logError))
-        .pipe(concat('style.min.css'))
-        .pipe(clean_css())
-        .pipe(rev())
-        .pipe(dest('build'))
-        .pipe(rev.manifest('build/rev-manifest.json', {
-            base: 'build',
-            merge:true
-        }))
-        .pipe(dest('build'));
+    .pipe(mode.development(sourcemaps.init()))
+    .pipe(sass().on('error', sass.logError))
+    .pipe(concat('style.min.css'))
+    .pipe(clean_css())
+    .pipe(rev())
+    .pipe(mode.development(sourcemaps.write('.')))
+    .pipe(dest('build'))
+    .pipe(rev.manifest('build/rev-manifest.json', {
+        base: 'build',
+        merge:true
+    }))
+    .pipe(dest('build'));
 
         cb();
 }
