@@ -29,7 +29,7 @@ var isProduction = mode.production();
 // Set webpackconfig file depdending on mode
 var webpackConfig = require('./webpack.devel.config.js');
 if (isProduction) {
-    var webpackConfig = require('./webpack.prod.config.js');
+    webpackConfig = require('./webpack.prod.config.js');
 }
 
 function html(cb) {
@@ -78,7 +78,7 @@ function js(cb) {
 
     return src([
         'dist/javascript.min.js', 'dist/javascript.min.js.map'
-    ])
+    ], {allowEmpty: true})
         .pipe(rev())
     // The sourcemaps file should not be versioned.
     // We rename it here to remove the rev.
@@ -160,7 +160,7 @@ function browser_reload(cb) {
 }
 
 function clean(cb) {
-    return del(['build/*'], {force: true});
+    return del(['build/*', 'dist/*'], {force: true});
 }
 
 const defaultTask = parallel(webpack_watch, series(
