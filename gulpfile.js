@@ -50,7 +50,7 @@ function html(cb) {
 }
 
 function css(cb) {
-    del.sync(['build/*.css'], {force: true});
+    del.sync(['build/*.css', 'build/*.css.map'], {force: true});
 
     return src(
         [
