@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
-    {{> head }}
-    <body>        
-        <div class="container">
-            <div class="row">
-                <div class="col-sm">
-                   Column 1
-                </div>
-                <div class="col-sm">
-                   Column 2
-                </div>
-                <div class="col-sm">
-                   Column 3
-                </div>
-            </div>
-        </div>
-        <div id="root">
-            </div>
-        {{> footer }}
-    </body>
+{{> head }}
+
+<body class="header-fixed header-light">
+
+    <header class="navbar">
+        <a class="navbar-brand" href="#">
+                <img src="images/logo.svg"  width="50" height="50" class="d-inline-block align-top" alt="" loading="lazy"/><span>derive alpha</span>
+            </a>
+    </header>
+
+    <main class="container">
+    </main>
+
+    {{> footer }}
+</body>
+
 </html>
