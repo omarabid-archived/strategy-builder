@@ -9,6 +9,7 @@
         "@types/react-dom": "^16.9.8",
         "react": "^16.14.0",
         "react-dom": "^16.14.0",
+        "sleek-dashboard": "^1.0.0-beta.5",
         "yargs": "^13.3.2"
     },
     "devDependencies": {
