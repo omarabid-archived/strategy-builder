@@ -1,0 +1,31 @@
+<div id="load">
+    <div class="custom_loader">
+        Loading...
+    </div>
+</div>
+<script>
+document.onreadystatechange = function () {
+    var state = document.readyState
+    if (state == 'complete') {
+        document.getElementById('load').classList.add('fade');
+        setTimeout(function(){
+            document.getElementById('load').style.display="none";
+        },1000);
+    }
+}
+</script>
+<style type="text/css">
+#load {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9999;
+    background-color: white;
+    opacity: 1;
+    transition: opacity 1s;
+}
+#load.fade {
+    opacity: 0;
+}
+</style>
