@@ -2,14 +2,20 @@
 <html dir="ltr" lang="en-US">
 {{> head }}
 
-<body class="header-fixed header-light">
+<body>
     {{> noscript }}
     {{> load }}
 
     <header class="navbar">
-        <a class="navbar-brand" href="#">
-                <img src="images/logo.svg"  width="50" height="50" class="d-inline-block align-top" alt="" loading="lazy"/><span>derive alpha</span>
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="images/logo.svg" alt="" loading="lazy"/>
+                <div>
+                <span>derive</span><span>alpha</span>
+                </div>
             </a>
+           <button class="navbar-toggler">text</button> 
+        </div>
     </header>
 
     <main class="container">
