@@ -1,68 +1,13 @@
 // noscript styles
 @import "noscript";
 
-// Sleek Dashboard files.
-@import "../../node_modules/sleek-dashboard/scss/variables";
-
-// Custom styles
-@import "variables.scss";
-
 // Required Bootstrap files
-//@import "../../node_modules/bootstrap/scss/functions";
-//@import "../../node_modules/bootstrap/scss/variables";
-//@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "variables";
+@import "../../node_modules/bootstrap/scss/mixins";
 
 // Optional Bootstrap files
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
-
-// Sleep styles
-@import '../../node_modules/sleek-dashboard/scss/reboot';
-@import '../../node_modules/sleek-dashboard/scss/utilities/spacing';
-@import '../../node_modules/sleek-dashboard/scss/utilities/background';
-@import '../../node_modules/sleek-dashboard/scss/utilities/sizing';
-@import '../../node_modules/sleek-dashboard/scss/utilities/text';
-@import '../../node_modules/sleek-dashboard/scss/utilities/position';
-@import '../../node_modules/sleek-dashboard/scss/utilities/overflow';
-
-@import '../../node_modules/sleek-dashboard/scss/alert';
-@import '../../node_modules/sleek-dashboard/scss/badge';
-@import '../../node_modules/sleek-dashboard/scss/bredcrumb';
-@import '../../node_modules/sleek-dashboard/scss/buttons';
-@import '../../node_modules/sleek-dashboard/scss/card';
-@import '../../node_modules/sleek-dashboard/scss/caret';
-@import '../../node_modules/sleek-dashboard/scss/chat';
-@import '../../node_modules/sleek-dashboard/scss/carousel';
-@import '../../node_modules/sleek-dashboard/scss/chart';
-@import '../../node_modules/sleek-dashboard/scss/calendar';
-@import '../../node_modules/sleek-dashboard/scss/dropdown';
-@import '../../node_modules/sleek-dashboard/scss/code';
-@import '../../node_modules/sleek-dashboard/scss/date-range-picker';
-@import '../../node_modules/sleek-dashboard/scss/forms';
-@import '../../node_modules/sleek-dashboard/scss/media';
-@import '../../node_modules/sleek-dashboard/scss/footer';
-@import '../../node_modules/sleek-dashboard/scss/grid';
-@import '../../node_modules/sleek-dashboard/scss/icons';
-@import '../../node_modules/sleek-dashboard/scss/list-group';
-@import '../../node_modules/sleek-dashboard/scss/map';
-@import '../../node_modules/sleek-dashboard/scss/modal';
-@import '../../node_modules/sleek-dashboard/scss/navbar';
-@import '../../node_modules/sleek-dashboard/scss/pagination';
-@import '../../node_modules/sleek-dashboard/scss/progress';
-@import '../../node_modules/sleek-dashboard/scss/popover-tooltip';
-@import '../../node_modules/sleek-dashboard/scss/profile';
-@import '../../node_modules/sleek-dashboard/scss/sidebar';
-@import '../../node_modules/sleek-dashboard/scss/spinkit';
-@import '../../node_modules/sleek-dashboard/scss/separator';
-@import '../../node_modules/sleek-dashboard/scss/switchers';
-@import '../../node_modules/sleek-dashboard/scss/tabs';
-@import '../../node_modules/sleek-dashboard/scss/toaster';
-@import '../../node_modules/sleek-dashboard/scss/todo';
-@import '../../node_modules/sleek-dashboard/scss/type';
-@import '../../node_modules/sleek-dashboard/scss/tables';
-@import '../../node_modules/sleek-dashboard/scss/widgets';
-@import '../../node_modules/sleek-dashboard/scss/error';
-@import '../../node_modules/sleek-dashboard/scss/lada-button';
-@import '../../node_modules/sleek-dashboard/scss/github';
-@import '../../node_modules/sleek-dashboard/scss/rtl';
+@import "../../node_modules/bootstrap/scss/grid";
 
 @import 'styles';
