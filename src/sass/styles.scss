@@ -23,3 +23,26 @@ A.navbar-brand {
         }
     }
 }
+
+// Menu Button
+.menu-toggle {
+    cursor: pointer;
+    .bars {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+        .bar {
+            display: block;
+            width: 17px;
+            height: 2px;
+            background: #000;
+            border-radius: 0px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+        } 
+    }
+    SPAN {
+        vertical-align: middle;
+        text-transform: uppercase;
+    }
+}
