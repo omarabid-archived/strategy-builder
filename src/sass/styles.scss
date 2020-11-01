@@ -46,3 +46,16 @@ A.navbar-brand {
         text-transform: uppercase;
     }
 }
+
+FOOTER {
+    background: #0c1820;
+    padding-top: 22px;
+    .copyright-text {
+        border-top: 1px solid #838383;
+        margin-top: 10px;
+        padding-top: 20px;
+    }
+    P {
+        color: #FFF;
+    }
+}
