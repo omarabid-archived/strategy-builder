@@ -34,6 +34,7 @@ A.navbar-brand {
 // Menu Button
 .menu-toggle {
     cursor: pointer;
+    position: relative;
     .bars {
         display: inline-block;
         vertical-align: middle;
@@ -48,10 +49,56 @@ A.navbar-brand {
             margin-top: 5px;
         } 
     }
+    .bars.toggle-close {
+        display: inline-block;
+        :first-child {
+            transform: translate(0, 0) rotate(68deg);
+        }
+        :last-child {
+            transform: translate(0, -7px) rotate(-24deg);
+        }
+        .bar {
+
+        }
+    }
+    .toggle-close {
+        display: none !important;
+    }
     SPAN {
         vertical-align: middle;
         text-transform: uppercase;
     }
+}
+
+#css-toggle {
+    opacity: 0;
+    width: 70px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+}
+
+.submenu-toggle {
+display: none;
+position: fixed;
+width: 100%;
+height: 100%;
+left: 0;
+right: 0;
+}
+
+#css-toggle:checked ~ .submenu-toggle {
+display: block;
+}
+
+#css-toggle:checked ~ .toggle-open {
+    display: none !important;
+}
+
+#css-toggle:checked ~ .toggle-close {
+    display: unset !important;
 }
 
 FOOTER {
