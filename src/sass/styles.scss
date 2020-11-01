@@ -4,6 +4,13 @@ HEADER {
 }
 
 // Logo (a)
+A.navbar-brand.inverse-colors {
+    DIV {
+        SPAN {
+            color: $white;
+        }
+    }
+}
 A.navbar-brand {
     font-family: 'Almarai', sans-serif;
     IMG {
