@@ -59,11 +59,14 @@ A.navbar-brand {
             transform: translate(0, -7px) rotate(-24deg);
         }
         .bar {
-
+            background-color: white;
         }
     }
     .toggle-close, .bars.toggle-close {
         display: none;
+        z-index: 20;
+        color: #fff;
+        position: relative;
     }
     SPAN {
         vertical-align: middle;
@@ -79,6 +82,7 @@ A.navbar-brand {
     left: 0;
     top: 0;
     cursor: pointer;
+    z-index: 30;
 }
 
 .submenu-toggle {
@@ -88,6 +92,14 @@ width: 100%;
 height: 100%;
 left: 0;
 right: 0;
+top: 0;
+z-index: 10;
+.submenu.collapse {
+pointer-events: auto !important;
+transition: all .3s ease-in-out;
+background: #101A22;
+padding: 50px 0;
+}
 }
 
 #css-toggle:checked ~ .submenu-toggle {
