@@ -34,7 +34,7 @@ A.navbar-brand {
 // Menu Button
 .menu-toggle {
     cursor: pointer;
-    position: relative;
+    position: inherit;
     .bars {
         display: inline-block;
         vertical-align: middle;
@@ -78,16 +78,16 @@ A.navbar-brand {
     opacity: 0;
     width: 80px;
     height: 25px;
-    position: absolute;
-    left: -5;
-    top: 0;
+    position: relative;
+    left: 75px;
+    top: calc(1rem - 10px);
     cursor: pointer;
     z-index: 30;
 }
 
 .submenu-toggle {
     display: none;
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 100%;
     left: 0;
