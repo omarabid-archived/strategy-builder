@@ -51,6 +51,7 @@ A.navbar-brand {
     }
     .bars.toggle-close {
         display: inline-block;
+        transform: translate(0, 0) rotate(68deg);
         :first-child {
             transform: translate(0, 0) rotate(68deg);
         }
@@ -61,8 +62,8 @@ A.navbar-brand {
 
         }
     }
-    .toggle-close {
-        display: none !important;
+    .toggle-close, .bars.toggle-close {
+        display: none;
     }
     SPAN {
         vertical-align: middle;
@@ -98,7 +99,7 @@ display: block;
 }
 
 #css-toggle:checked ~ .toggle-close {
-    display: unset !important;
+    display: inline-block;
 }
 
 FOOTER {
