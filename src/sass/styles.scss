@@ -101,6 +101,58 @@ A.navbar-brand {
     }
 }
 
+.header-menu {
+padding-top: 50px;
+}
+
+.menu-item {
+    margin-left: 4px;
+    position: static;
+    background: transparent;
+    box-shadow: none;
+    border: 0;
+    A {
+        padding: 7px 15px;
+        padding-left: 15px;
+        color: #FFF;
+        text-transform: none;
+        font-family: 'graphik';
+        font-size: 18px;
+        background: transparent;
+        padding-left: 0px !important;
+        opacity: 0.5;
+transition: all 0.3s;
+    }
+    A:hover {
+        opacity: 0.75;
+        text-transform: none;
+        text-decoration: none;
+    }
+    UL.sub-menu {
+        list-style-type: none;
+        padding: 0;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        white-space: nowrap;
+        text-align: left;
+        LI {
+            position: static;
+            background: transparent;
+            box-shadow: none;
+            border: 0;
+            margin-left: 0;
+            margin-bottom: 10px;
+            padding-left: 0;
+            A {
+font-size: 16px;
+padding: 7px 15px;
+            }
+        }
+    }
+}
+
 #css-toggle:checked ~ .submenu-toggle {
 display: block;
 }
