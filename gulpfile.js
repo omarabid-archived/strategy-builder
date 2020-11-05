@@ -150,7 +150,8 @@ function browser_reload(cb) {
 
     browser_sync.init({
         server: "build",
-        host: 'frontroot.com',
+        host: 'derivealpha.com',
+        single: true,
         port: 8080
     });
 
