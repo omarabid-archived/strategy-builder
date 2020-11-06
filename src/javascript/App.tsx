@@ -1,6 +1,6 @@
 import * as React from "react";
 import {Component} from "react";
-import { Router, Link } from "@reach/router";
+import { Router, Link, globalHistory } from "@reach/router";
 
 
 import Header from "./components/Header";
@@ -23,6 +23,13 @@ class App extends Component {
           </Router>
       </div>
     );
+  }
+    public componentDidMount() {
+    globalHistory.listen(({ action }) => {
+      if (action === 'PUSH') {
+          document.getElementById('css-toggle').checked = false;
+      }
+    })
   }
 }
 
