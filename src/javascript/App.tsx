@@ -4,6 +4,7 @@ import { Router, Link, globalHistory } from "@reach/router";
 
 
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import Terms from "./pages/Terms";
@@ -13,15 +14,18 @@ import Privacy from "./pages/Privacy";
 class App extends Component {
   render() {
     return(
-      <div className="App">
-        <Header />
-          <Router>
-              <Home path="/" />
-              <Terms path="/terms-of-service" />
-              <Privacy path="/privacy-policy" />
-              <About path="/about" />
-          </Router>
-      </div>
+        <div>
+            <Header />
+
+            <Router>
+                <Home path="/" />
+                <Terms path="/terms-of-service" />
+                <Privacy path="/privacy-policy" />
+                <About path="/about" />
+            </Router>
+
+            <Footer />
+        </div>
     );
   }
     public componentDidMount() {
